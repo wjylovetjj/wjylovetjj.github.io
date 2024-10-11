@@ -112,8 +112,8 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
-	$("#elapseClock").html(result);
+	var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒"; 
+	$("#elapseClock").html("我们在一起已经: "+result);
 }
 
 function weddingCountdown(weddingDate) {
@@ -131,8 +131,8 @@ function weddingCountdown(weddingDate) {
         seconds = seconds % 60;
         if (seconds < 10) seconds = "0" + seconds;
 
-        var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
-        $("#weddingClock").html("距结婚还有: " + result);
+        var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒"; 
+        $("#weddingClock").html("距离结婚还有: " + result);
     } else {
         $("#weddingClock").html("祝贺你们已经结婚啦!");
     }
