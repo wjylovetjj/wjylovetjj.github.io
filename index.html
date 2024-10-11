@@ -65,7 +65,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	// 检测是否为手机用户
-	if (true) {
+	if (isMobile()) {
 		// 手机用户，调整布局
 		$("#loveHeart").css({
 			"width": "120%",
@@ -89,14 +89,16 @@ $(document).ready(function() {
 			"float": "none"
 		});
 		// 增大时钟字体大小
+		$("words").css({
+			"font-family": "sans-serif",
+			"font-size": "36px",
+			"width": "100%"
+		});
 		$("#elapseClock, #weddingClock").css({
 			"font-size": "36px"
 		});
 		$("#elapseClock .digit, #weddingClock .digit").css({
 			"font-size": "72px"
-		});
-		$("#messages").css({
-			"font-size": "36px"
 		});
 		// 将code移动到爱心上方
 		$("#mainDiv").prepend($("#code"));
