@@ -69,19 +69,28 @@ $(document).ready(function() {
 		// 手机用户，调整布局
 		$("#loveHeart").css({
 			"width": "100%",
-			"height": "400px"
-		});
+			"height": ($("#loveHeart").width() * 0.9328) + "px",  // 设置高度为宽度的0.9328倍
+			"position": "absolute",  // 绝对定位
+			"top": "50%",          // 距离顶部50%
+			"left": "50%",         // 距离左边50%
+			"transform": "translate(-50%, -50%)"  // 居中
+		});		
 		$("#garden").css({
 			"width": "100%",
 			"height": "400px"
 		});
 		$("#code").css({
 			"width": "100%",
-			"font-size": "18px",
+			"font-size": "36px",
 			"height": "auto",
-			"float": "none",
-			"margin-bottom": "20px"
-		});
+			"margin-bottom": "20px",
+			"position": "absolute",  // 使元素相对于其最近的已定位的祖先元素进行定位
+			"top": "10vh",           // 距离屏幕顶部10%的高度
+			"left": "50%",           // 水平定位到页面的50%
+			"transform": "translateX(-50%)",  // 使元素居中
+			"float": "none"
+		});		
+		
 		// 将code移动到爱心上方
 		$("#mainDiv").prepend($("#code"));
 	} else {
