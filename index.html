@@ -65,6 +65,9 @@
 $(document).ready(function() {
 	// 检测是否为手机用户
 	if (isMobile()) {
+		music= document.getElementsByClassName("music-player")[0];
+		music.src = "https://music.163.com/outchain/player?type=2&id=1397345903&auto=1&height=172";
+		
         loadMobileStylesheet();
 		// 手机用户，调整布局
 		$("#loveHeart").css({

@@ -147,6 +147,6 @@ button:hover {
 	top: 35%; /* 顶部距离是视口高度的50% */
 	transform: translateY(-50%); /* 通过transform垂直居中 */
 	width: 330px; /* 设置宽度，与iframe的width属性一致 */
-	height: 86px; /* 设置高度，与iframe的height属性一致 */
+	height: 172px; /* 设置高度，与iframe的height属性一致 */
 	border: none; /* 移除边框 */
 }
