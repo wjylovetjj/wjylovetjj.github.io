@@ -53,7 +53,7 @@
 			<canvas id="garden"></canvas>
 			<div id="words">
 				<div id="messages">
-					相遇，相识，相恋123...
+					相遇，相识，相恋...
 					<div id="elapseClock"></div>
 					<div id="weddingClock"></div>
 				</div>
@@ -80,15 +80,24 @@ $(document).ready(function() {
 		});
 		$("#code").css({
 			"width": "100%",
-			"font-size": "30px",
+			"font-size": "40px",
 			"height": "auto",
 			"margin-bottom": "20px",
 			"position": "absolute",  // 使元素相对于其最近的已定位的祖先元素进行定位
-			"top": "-15%",           // 顶部
+			"top": "-20%",           // 顶部
 			"left": "25%",           // 水平定位到页面的50%
 			"float": "none"
-		});		
-		
+		});
+		// 增大时钟字体大小
+		$("#elapseClock, #weddingClock").css({
+			"font-size": "36px"
+		});
+		$("#elapseClock .digit, #weddingClock .digit").css({
+			"font-size": "72px"
+		});
+		$("#messages").css({
+			"font-size": "36px"
+		});
 		// 将code移动到爱心上方
 		$("#mainDiv").prepend($("#code"));
 	} else {
