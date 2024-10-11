@@ -63,6 +63,72 @@
 </div>
 
 <script type="text/javascript">
+$(document).ready(function() {
+	// 检测是否为手机用户
+	if (isMobile()) {
+		// 手机用户，调整布局
+		$("#loveHeart").css({
+			"width": "100%",
+			"height": ($("#loveHeart").width() * 0.9328) + "px",  // 设置高度为宽度的0.9328倍
+			"position": "absolute",  // 绝对定位
+			"top": "70%",          // 距离顶部50%
+			"left": "0%",         // 距离左边50%
+		});		
+		$("#garden").css({
+			"width": "100%",
+			"height": "100%"
+		});
+		$("#code").css({
+			"width": "100%",
+			"font-size": "36px",
+			"height": "auto",
+			"margin-bottom": "20px",
+			"position": "absolute",  // 使元素相对于其最近的已定位的祖先元素进行定位
+			"top": "0",           // 顶部
+			"left": "50%",           // 水平定位到页面的50%
+			"transform": "translateX(-50%)",  // 使元素居中
+			"float": "none"
+		});		
+		
+		// 将code移动到爱心上方
+		$("#mainDiv").prepend($("#code"));
+	} else {
+		// 桌面用户，保留原布局
+		$("#loveHeart").css({
+			"width": "670px",
+			"height": "625px"
+		});
+		$("#garden").css({
+			"width": "100%",
+			"height": "100%"
+		});
+		$("#code").css({
+			"width": "440px",
+			"font-size": "12px",
+			"float": "left"
+		});
+	}
+
+	// 调整位置和字体大小后，继续加载动画和其他逻辑
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+		weddingCountdown(weddingDate);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+});
+
+// 判断是否为手机用户的函数
+function isMobile() {
+	return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+	
 
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
@@ -105,62 +171,6 @@ if (!document.createElement('canvas').getContext) {
 	$("#code").typewriter();
 }
 </script>
-<style type="text/css">
-	/* 手机设备的样式调整 */
-	@media only screen and (max-width: 768px) {
-		body {
-			font-size: 16px;
-		}
-	
-		#code {
-			font-size: 24px;
-			width: 100%;
-			margin-bottom: 20px;
-			margin-left: 30%; /* 左侧间隔 */
-			margin-top: 0; /* 从屏幕顶部开始 */
-		}
-	
-		#loveHeart {
-			width: 100%;
-		}
-	
-		#garden {
-			width: 100%;
-			height: 100%;
-		}
-	
-		#elapseClock .digit, #weddingClock .digit {
-			font-size: 28px;
-		}
-	
-		#elapseClock, #weddingClock {
-			font-size: 16px;
-		}
-	}
-	</style>
-	
-<script>
-function adjustLoveHeartHeight() {
-	// 获取loveHeart的宽度
-	var loveHeart = document.getElementById('loveHeart');
-	var width = loveHeart.offsetWidth;
-
-	// 设置高度为宽度的0.9328倍
-	loveHeart.style.height = (width * 0.9328) + 'px';
-}
-
-// 页面加载和调整窗口尺寸时执行
-function checkAndAdjustForMobile() {
-	// 只在屏幕宽度小于等于768px的情况下执行
-	if (window.innerWidth <= 768) {
-		adjustLoveHeartHeight();
-	}
-}
-
-window.addEventListener('resize', checkAndAdjustForMobile);
-window.addEventListener('load', checkAndAdjustForMobile);
-</script>
-	
 	
 <div style="text-align:center;clear:both">
 <!-- <p>Made for Mrs.Right, made by <a href="https://github.com/enfangzhong" target="_blank">Viper<a /></p>
