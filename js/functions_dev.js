@@ -134,7 +134,7 @@ function weddingCountdown(weddingDate) {
         var result = "<span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 时 <span class=\"digit\">" + minutes + "</span> 分 <span class=\"digit\">" + seconds + "</span> 秒"; 
         $("#weddingClock").html("距离结婚还有: " + result);
     } else {
-        $("#weddingClock").html("祝贺你们已经结婚啦!");
+        $("#weddingClock").html("我们已经结婚啦!");
     }
 }
 
